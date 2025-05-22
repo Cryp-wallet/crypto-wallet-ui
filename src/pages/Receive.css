@@ -1,0 +1,14 @@
+.receive {
+  text-align: center;
+  padding: 20px;
+}
+
+.qr-section {
+  margin: 20px 0;
+}
+
+.wallet-address {
+  margin-top: 10px;
+  font-family: monospace;
+  word-break: break-all;
+}
