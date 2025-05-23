@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
+import {
+  generateSeedPhrase,
+  createWalletFromPhrase,
+  getReceiveAddress,
+} from '../utils/wallet';
 import './Receive.css'; 
-import './Screen.css';  
 
-function Receive() {
-  const walletAddress = '0x1234567890abcdef1234567890abcdef12345678';
+const Receive = () => {
+  const [address, setAddress] = useState('');
+
+  useEffect(() => {
+    const phrase = generateSeedPhrase();
+    const wallet = createWalletFromPhrase(phrase);
+    const addr = getReceiveAddress(wallet);
+    setAddress(addr);
+  }, []);
 
   return (
     <div className="receive">
-      <h2>Receive Crypto</h2>
-
+      <h2>Receive</h2>
       <div className="qr-section">
-        <QRCodeSVG value={walletAddress} size={160} />
-        <p className="wallet-address">{walletAddress}</p>
+        <QRCodeSVG value={address} size={160} />
+        <div className="wallet-address">{address}</div>
       </div>
-
-      <p>Scan this QR code or copy your address to receive funds.</p>
     </div>
   );
-}
+};
 
 export default Receive;

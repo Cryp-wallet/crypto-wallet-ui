@@ -1,40 +1,33 @@
-.seed-phrase {
-  padding: 20px;
+.seed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
+  align-items: center;
+}
+
+.seed-word {
+  background-color: #1a1a1a;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 10px;
   text-align: center;
-}
-
-.warning {
-  color: red;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.reveal-btn, .copy-btn {
-  background-color: #6a5acd;
   color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  margin: 10px;
-  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.phrase-box {
-  margin: 20px auto;
-  padding: 15px;
-  border: 1px dashed #888;
-  border-radius: 10px;
-  max-width: 400px;
-  background-color: #f9f9f9;
+.index {
+  font-weight: bold;
+  color: #888;
+}
+
+.seed-phrase-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
+  flex-direction: column; 
+  align-items: center;      
+  min-height: 100vh;        
 }
 
-.word {
-  background-color: #eee;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-family: monospace;
-}

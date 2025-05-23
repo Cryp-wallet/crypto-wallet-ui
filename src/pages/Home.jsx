@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Home.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Home.css';
 
 function Home() {
   return (
@@ -16,22 +16,17 @@ function Home() {
       <p className="networks-title">Popular Networks</p>
 
       <div className="networks">
-        <div className="network-card">
+        <div>
           <img src="/icons/eth.svg" alt="Ethereum" />
-          <span>Ethereum</span>
+          <p>Ethereum</p>
         </div>
-        <div className="network-card">
-          <img src="/icons/polygon.svg" alt="Polygon" />
-          <span>Polygon</span>
-        </div>
-        <div className="network-card">
-          <img src="/icons/bnb.svg" alt="BNB Chain" />
-          <span>BNB Chain</span>
-        </div>
-        <div className="network-card">
-          <img src="/icons/arbitrum.svg" alt="Arbitrum" />
-          <span>Arbitrum</span>
-        </div>
+      </div>
+
+      {/* TEMP: Seed Phrase Access Button  */}
+      <div style={{ marginTop: '20px' }}>
+        <Link to="/seed-phrase" style={{ color: '#007bff', textDecoration: 'underline' }}>
+          View Seed Phrase (Temporary)
+        </Link>
       </div>
     </div>
   );
