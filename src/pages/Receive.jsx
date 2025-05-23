@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { QRCodeSVG } from 'qrcode.react';
 import {
   generateSeedPhrase,
@@ -19,6 +20,7 @@ const Receive = () => {
 
   return (
     <div className="receive">
+      <Link to="/home" className="back-button">← Back</Link>
       <h2>Receive</h2>
       <div className="qr-section">
         <QRCodeSVG value={address} size={160} />

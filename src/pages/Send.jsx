@@ -5,7 +5,7 @@ import './Send.css';
 function Send() {
   return (
     <div className="screen">
-      <Link to="/" className="back-button">← Back</Link>
+      <Link to="/home" className="back-button">← Back</Link>
       <h2>Send Crypto</h2>
       
       <form className="form">

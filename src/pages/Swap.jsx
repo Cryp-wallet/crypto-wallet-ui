@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import './Swap.css';
 
@@ -24,6 +25,7 @@ function Swap() {
 
   return (
     <div className="swap">
+      <Link to="/home" className="back-button">← Back</Link>
       <h2>Token Swap</h2>
 
       <div className="select-row">

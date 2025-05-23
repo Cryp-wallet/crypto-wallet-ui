@@ -1,12 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Home.css';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getEthBalance } from "../utils/balance"; 
+import "./Home.css";
 
 function Home() {
+  const [balance, setBalance] = useState("Loading...");
+  const wallet = { address: "0x123...abc" }; 
+
+  useEffect(() => {
+  const fetchBalance = async () => {
+    console.log('Fetching mock ETH balance...');
+    const ethBalance = await getEthBalance(wallet.address);
+    setBalance(ethBalance);
+  };
+  fetchBalance();
+}, [wallet.address]);
+
   return (
     <div className="home">
-      <h1 className="balance">0.00 ETH</h1>
-
+      <h1 className="balance">{balance}</h1>
       <div className="actions">
         <Link to="/send">Send</Link>
         <Link to="/receive">Receive</Link>
@@ -22,9 +34,11 @@ function Home() {
         </div>
       </div>
 
-      {/* TEMP: Seed Phrase Access Button  */}
-      <div style={{ marginTop: '20px' }}>
-        <Link to="/seed-phrase" style={{ color: '#007bff', textDecoration: 'underline' }}>
+      <div style={{ marginTop: "20px" }}>
+        <Link
+          to="/seed-phrase"
+          style={{ color: "#007bff", textDecoration: "underline" }}
+        >
           View Seed Phrase (Temporary)
         </Link>
       </div>
